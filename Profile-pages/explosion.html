@@ -1,0 +1,114 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Looping Sprite Animation</title>
+
+  <style>
+    body {
+      margin: 0;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 20px;
+      background: #10131f;
+      color: white;
+      font-family: Arial, sans-serif;
+    }
+
+    h1 {
+      font-size: 24px;
+      letter-spacing: 2px;
+    }
+
+    .animation-container {
+      width: 240px;
+      height: 240px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: white;
+      border: 1px solid #39334f;
+      border-radius: 16px;
+    }
+
+    canvas {
+      width: 180px;
+      height: 180px;
+      image-rendering: pixelated;
+    }
+
+    p {
+      color: #a8aec8;
+      font-size: 14px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>EXPLOSION ANIMATION</h1>
+
+  <div class="animation-container">
+    <canvas id="sprite" width="120" height="120"></canvas>
+  </div>
+
+  <script>
+    const canvas = document.getElementById("sprite");
+    const ctx = canvas.getContext("2d");
+    const image = new Image();
+
+    // Your sprite sheet has 10 columns and 5 rows.
+    const columns = 10;
+    const rows = 5;
+    const frameWidth = 30;
+    const frameHeight = 30;
+    const totalFrames = columns * rows;
+
+    let frame = 0;
+    let lastFrameTime = 0;
+    const frameDuration = 1000 / 36; // 12 FPS
+
+    image.src = "sprite-transparent.png";
+
+    function animate(timestamp) {
+      requestAnimationFrame(animate);
+
+      if (!image.complete || !image.naturalWidth) return;
+
+      if (timestamp - lastFrameTime < frameDuration) return;
+      lastFrameTime = timestamp;
+
+      // Convert the current frame number into grid coordinates.
+      const column = frame % columns;
+      const row = Math.floor(frame / columns);
+
+      // Clear the previous frame.
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+      // Draw just one frame from the sprite sheet.
+      ctx.drawImage(
+        image,
+        column * frameWidth,
+        row * frameHeight,
+        frameWidth,
+        frameHeight,
+        0,
+        0,
+        canvas.width,
+        canvas.height
+      );
+
+      // Advance and loop back to the first frame.
+      frame = (frame + 1) % totalFrames;
+    }
+
+    image.onload = () => {
+      requestAnimationFrame(animate);
+    };
+  </script>
+</body>
+</html>
