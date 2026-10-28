@@ -1,0 +1,503 @@
+
+/* =========================
+   BASIC RESET
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 90px;
+}
+
+body {
+    background-color: #17191a;
+    color: #f3f0e9;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button,
+input {
+    font: inherit;
+}
+
+button,
+a,
+input {
+    -webkit-tap-highlight-color: transparent;
+}
+
+:root {
+    --background: #17191a;
+    --card: #232627;
+    --accent: #e65c3d;
+    --gold: #d6b879;
+    --text: #f3f0e9;
+    --muted: #aaa9a4;
+    --border: #393c3d;
+}
+
+/* =========================
+   ACCESSIBILITY
+========================= */
+
+.visually-hidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background-color: rgba(23, 25, 26, 0.96);
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: var(--accent);
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+#nav-bar nav {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+#nav-bar nav a {
+    color: var(--muted);
+    font-size: 0.9rem;
+    transition: color 0.2s ease;
+}
+
+#nav-bar nav a:hover {
+    color: var(--accent);
+}
+
+/* =========================
+   HERO / SEARCH
+========================= */
+
+#search-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 65vh;
+    padding: 70px 22px;
+    text-align: center;
+    background:
+        radial-gradient(
+            ellipse at top,
+            rgba(230, 92, 61, 0.17),
+            transparent 65%
+        );
+}
+
+.eyebrow {
+    margin-bottom: 10px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+#search-section h1 {
+    color: var(--text);
+    font-size: clamp(2.7rem, 13vw, 5rem);
+    font-weight: 900;
+    letter-spacing: 3px;
+    line-height: 1.1;
+}
+
+.hero-description {
+    max-width: 480px;
+    margin: 22px 0;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.searchbar {
+    display: flex;
+    width: 100%;
+    max-width: 430px;
+    overflow: hidden;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background-color: var(--card);
+}
+
+.searchbar input {
+    width: 100%;
+    min-width: 0;
+    padding: 14px;
+    color: var(--text);
+    background: transparent;
+    border: none;
+    outline: none;
+}
+
+.searchbar input::placeholder {
+    color: #92928e;
+}
+
+.search-icon {
+    flex-shrink: 0;
+    width: 54px;
+    color: white;
+    background-color: var(--accent);
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.2s ease;
+}
+
+.search-icon:hover {
+    background-color: #c9492e;
+}
+
+.search-note {
+    margin-top: 12px;
+    color: var(--muted);
+    font-size: 0.8rem;
+}
+
+/* =========================
+   SHARED SECTIONS
+========================= */
+
+.page-section {
+    padding: 55px 18px;
+    scroll-margin-top: 80px;
+}
+
+.section-heading {
+    margin: 0 auto 28px;
+    text-align: center;
+}
+
+.section-heading h2 {
+    margin-bottom: 8px;
+    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    line-height: 1.2;
+}
+
+.section-heading > p:last-child {
+    color: var(--muted);
+    font-size: 0.95rem;
+}
+
+/* =========================
+   ARTIST CARDS
+========================= */
+
+.artist-names {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 20px;
+    max-width: 1050px;
+    margin: 0 auto;
+}
+
+.artist-photos {
+    overflow: hidden;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.artist-photos:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+}
+
+.artist-photos img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background-color: #2b2d2d;
+}
+
+.artist-info {
+    padding: 18px;
+}
+
+.artist-info h3 {
+    margin-bottom: 3px;
+    font-size: 1.4rem;
+}
+
+.artist-info p {
+    margin-bottom: 14px;
+    color: var(--muted);
+}
+
+/* =========================
+   TEXT LINKS
+========================= */
+
+.text-link {
+    display: inline-block;
+    color: var(--accent);
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.text-link:hover {
+    color: var(--gold);
+}
+
+/* =========================
+   ALBUM CARDS
+========================= */
+
+#music-section {
+    background-color: #1d2021;
+}
+
+.album-cards {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.album-card {
+    min-width: 0;
+    overflow: hidden;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition:
+        transform 0.25s ease,
+        border-color 0.25s ease;
+}
+
+.album-card:hover {
+    transform: translateY(-4px);
+    border-color: var(--accent);
+}
+
+.album-photo {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background-color: #303333;
+}
+
+.album-details {
+    padding: 12px;
+}
+
+.album-name {
+    margin-bottom: 5px;
+    overflow-wrap: anywhere;
+    font-size: 0.95rem;
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.artist-card-name {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 0.82rem;
+}
+
+.section-footer {
+    margin-top: 22px;
+    color: var(--muted);
+    font-size: 0.8rem;
+    text-align: center;
+}
+
+/* =========================
+   PROFILE CARDS
+========================= */
+
+.profile-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 16px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.profile-bar {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
+    background-color: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+}
+
+.profile-bar img {
+    flex-shrink: 0;
+    width: 82px;
+    height: 82px;
+    object-fit: cover;
+    background-color: #303333;
+    border-radius: 8px;
+}
+
+.profile-bar h3 {
+    margin-bottom: 5px;
+    font-size: 1rem;
+}
+
+.profile-bar p {
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 35px 20px;
+    background-color: #111313;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+footer .copyright {
+    margin-top: 18px;
+    font-size: 0.75rem;
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 620px) {
+    #nav-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 18px 28px;
+    }
+
+    #nav-bar nav {
+        gap: 24px;
+    }
+
+    .page-section {
+        padding: 70px 28px;
+    }
+
+    .artist-names {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 22px;
+    }
+
+    .album-cards {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 20px;
+    }
+
+    .profile-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+    #nav-bar {
+        padding: 20px 6%;
+    }
+
+    #search-section {
+        min-height: 75vh;
+    }
+
+    .page-section {
+        padding: 85px 6%;
+    }
+
+    .artist-names {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+
+    .album-cards {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+
+    .profile-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition-duration: 0.01ms !important;
+        animation-duration: 0.01ms !important;
+    }
+}

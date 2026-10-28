@@ -1,96 +1,255 @@
+
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="A website dedicated to the duo and solo music of Fletcher and Wyatt Shears via 'The Garden', 'Puzzle', and 'Enjoy'.">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn about The Garden, Fletcher Shears, and Wyatt Shears.">
+    <title>The Garden | Puzzle & Enjoy</title>
+    <link rel="stylesheet" href="./global.css" type="text/css">
+</head>
 
-        <title>Home | The Garden | Puzzle | Enjoy</title>
-    </head>
+<body>
 
-    <body>
-        <header>
-            <nav id="nav-bar">
-                <a>Home</a>
-                <a>Artist</a>
-                <a>Albums</a>
-                <a href="Profile-pages/explosion.html">EXPLOSION</a>
-            </nav>
-            <div id="search-section">
-                <h2>Search for an Album or Song!</h2>
-                <div class="searchbar">
-                    <img class="search-icon">
-                    <p>What's your choice?</p>
-                </div>
+    <!-- Navigation -->
+    <header id="nav-bar">
+        <a class="logo" href="index.html">THE GARDEN</a>
+
+        <nav aria-label="Main navigation">
+            <a href="#artist-section">Artists</a>
+            <a href="#music-section">Music</a>
+            <a href="#profile-section">Profiles</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <!-- Hero / Search Section -->
+        <section id="search-section">
+            <p class="eyebrow">WELCOME TO VADA VADA</p>
+
+            <h1>THE GARDEN</h1>
+
+            <p class="hero-description">
+                Discover the music and creative projects of twin brothers
+                Fletcher and Wyatt Shears.
+            </p>
+
+            <form class="searchbar" action="#music-section" method="get">
+                <label for="site-search" class="visually-hidden">
+                    Search the website
+                </label>
+
+                <input
+                    type="search"
+                    id="site-search"
+                    name="q"
+                    placeholder="Explore artists and albums..."
+                >
+
+                <button type="submit" class="search-icon" aria-label="Search">
+                    →
+                </button>
+            </form>
+
+            <p class="search-note">
+                Explore the artists and their music below.
+            </p>
+        </section>
+
+        <!-- Artists -->
+        <section id="artist-section" class="page-section">
+            <div class="section-heading">
+                <p class="eyebrow">THE PEOPLE</p>
+                <h2>Meet the Artists</h2>
+                <p>Two brothers with their own creative styles.</p>
             </div>
-        </header>
 
-        <main>
-            <section id="artist-section">
-                <div class="artist-names">
-                    <h1>Puzzle</h1>
-                    <h1>The Garden</h1>
-                    <h1>Enjoy</h1>
-                </div>
-                <div class="artist-photos">
-                    <a>
-                        <img>
-                    </a>
-                    <a>
-                        <img>
-                    </a>
-                    <a>
-                        <img>
-                    </a>
-                </div>
-            </section>
+            <div class="artist-names">
 
-            <section id="music-section">
-                <h2>Explore their music</h2>
-                <div class="album-cards">
-                    <div class="album-card">
-                        <img class="album-photo">
-                        <h4 class="album-name"></h4>
-                        <p class="artist-card-name"></p>
+                <article class="artist-photos">
+                    <a href="artist.html#puzzle">
+                        <img src="./images/artist-images/fletcher-shears.png" alt="Fletcher Shears, known as Puzzle">
+                        <div class="artist-info">
+                            <h3>Puzzle</h3>
+                            <p>Fletcher Shears</p>
+                            <span class="text-link">Explore artist →</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-photos">
+                    <a href="artist.html#the-garden">
+                        <img src="./images/artist-images/thegarden.png" alt="The Garden band artwork">
+                        <div class="artist-info">
+                            <h3>The Garden</h3>
+                            <p>Both Brothers</p>
+                            <span class="text-link">Explore band →</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="artist-photos">
+                    <a href="artist.html#enjoy">
+                        <img src="./images/artist-images/wyatt-shears.png" alt="Wyatt Shears, known as Enjoy">
+                        <div class="artist-info">
+                            <h3>Enjoy</h3>
+                            <p>Wyatt Shears</p>
+                            <span class="text-link">Explore artist →</span>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- Music -->
+        <section id="music-section" class="page-section">
+            <div class="section-heading">
+                <p class="eyebrow">THE DISCOGRAPHY</p>
+                <h2>Explore the Music</h2>
+                <p>Discover releases from the brothers and their projects.</p>
+            </div>
+
+            <div class="album-cards">
+
+                <article class="album-card">
+                    <a href="album.html#bootleg">
+                        <img
+                            class="album-photo"
+                            src="./images/album-covers/bootleg.png"
+                            alt="Bootleg album artwork"
+                            loading="lazy"
+                        >
+                        <div class="album-details">
+                            <p class="album-name">Bootleg</p>
+                            <p class="artist-card-name">The Garden</p>
+                            <span class="text-link">View album →</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="album-card">
+                    <a href="album.html#haha">
+                        <img
+                            class="album-photo"
+                            src="./images/album-covers/haha.png"
+                            alt="Haha album artwork placeholder"
+                            loading="lazy"
+                        >
+                        <div class="album-details">
+                            <p class="album-name">Haha</p>
+                            <p class="artist-card-name">The Garden</p>
+                            <span class="text-link">View album →</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="album-card">
+                    <a href="album.html#mirror">
+                        <img
+                            class="album-photo"
+                            src="./images/album-covers/mirror-might-steal-your-charm.png"
+                            alt="Mirror Might Steal Your Charm album artwork placeholder"
+                            loading="lazy"
+                        >
+                        <div class="album-details">
+                            <p class="album-name">Mirror Might Steal Your Charm</p>
+                            <p class="artist-card-name">The Garden</p>
+                            <span class="text-link">View album →</span>
+                        </div>
+                    </a>
+                </article>
+
+                <article class="album-card">
+                    <a href="album.html#kiss">
+                        <img
+                            class="album-photo"
+                            src="./images/album-covers/kiss-my-super-bowl-ring.png"
+                            alt="Kiss My Super Bowl Ring album artwork placeholder"
+                            loading="lazy"
+                        >
+                        <div class="album-details">
+                            <p class="album-name">Kiss My Super Bowl Ring</p>
+                            <p class="artist-card-name">The Garden</p>
+                            <span class="text-link">View album →</span>
+                        </div>
+                    </a>
+                </article>
+
+            </div>
+
+            <p class="section-footer">
+                Album artwork shown here uses local image files.
+            </p>
+        </section>
+
+        <!-- Profiles -->
+        <section id="profile-section" class="page-section">
+            <div class="section-heading">
+                <p class="eyebrow">LEARN MORE</p>
+                <h2>Artist Profiles</h2>
+                <p>Learn about each project and its sound.</p>
+            </div>
+
+            <div class="profile-grid">
+
+                <article class="profile-bar">
+                    <img
+                        src="./images/artist-images/fletcher-shears.png"
+                        alt=""
+                        loading="lazy"
+                    >
+                    <div>
+                        <h3>Fletcher Shears</h3>
+                        <p>Known for his solo project, Puzzle, and his work in The Garden.</p>
+                        <a href="artist.html#puzzle" class="text-link">
+                            Read profile →
+                        </a>
                     </div>
+                </article>
 
-                    <div class="album-card">
-                        <img class="album-photo">
-                        <h4 class="album-name"></h4>
-                        <p class="artist-card-name"></p>
+                <article class="profile-bar">
+                    <img
+                        src="./images/artist-images/thegarden.png"
+                        alt=""
+                        loading="lazy"
+                    >
+                    <div>
+                        <h3>Vada Vada</h3>
+                        <p>The creative approach associated with The Garden and its music.</p>
+                        <a href="artist.html#the-garden" class="text-link">
+                            Learn more →
+                        </a>
                     </div>
+                </article>
 
-                    <div class="album-card">
-                        <img class="album-photo">
-                        <h4 class="album-name"></h4>
-                        <p class="artist-card-name"></p>
+                <article class="profile-bar">
+                    <img
+                        src="./images/artist-images/wyatt-shears.png"
+                        alt=""
+                        loading="lazy"
+                    >
+                    <div>
+                        <h3>Wyatt Shears</h3>
+                        <p>Known for his solo project, Enjoy, and his work in The Garden.</p>
+                        <a href="artist.html#enjoy" class="text-link">
+                            Read profile →
+                        </a>
                     </div>
+                </article>
 
-                    <div class="album-card">
-                        <img class="album-photo">
-                        <h4 class="album-name"></h4>
-                        <p class="artist-card-name"></p>
-                    </div>
-                </div>
-            </section>
+            </div>
+        </section>
 
-            <section id="profile-section">
-                <h2>View their profiles!</h2>
-                <div class="profile-bar">
-                    <a>
-                        <img>
-                    </a>
-                    <a>
-                        <img>
-                    </a>
-                    <a>
-                        <img>
-                    </a>
-                </div>
-            </section>
-        </main>
-        <footer>
-            <!-- blah blah blah blah -->
-        </footer>
-    </body>
-</html> 
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <a class="logo" href="#nav-bar">THE GARDEN</a>
+        <p>A fan-made informational website about The Garden and its projects.</p>
+        <p class="copyright">&copy; 2026 Fan Website</p>
+    </footer>
+
+</body>
+</html>
