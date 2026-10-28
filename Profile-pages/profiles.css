@@ -10,13 +10,14 @@
 }
 
 :root {
-    --background: #17191a;
-    --card: #232627;
-    --accent: #e65c3d;
-    --gold: #d6b879;
+    --background: #13051A;
+    --card: #260934;
+    --accent: #601782;
+    --gold: #B352E0;
     --text: #f3f0e9;
     --muted: #aaa9a4;
-    --border: #393c3d;
+    --border: #300C41;
+    --accent: rgba(10, 2, 13, 0.5);
 }
 
 html {
@@ -59,12 +60,12 @@ a:focus-visible {
     align-items: center;
     gap: 12px;
     padding: 16px;
-    background: rgba(23, 25, 26, 0.97);
+    background: #0A020D;
     border-bottom: 1px solid var(--border);
 }
 
 .logo {
-    color: var(--accent);
+    color: #601782;
     font-size: 1.15rem;
     font-weight: 900;
     letter-spacing: 3px;
@@ -78,13 +79,13 @@ a:focus-visible {
 }
 
 #nav-bar nav a {
-    color: var(--muted);
+    color: var(--text);
     font-size: 0.9rem;
     transition: color 0.2s ease;
 }
 
 #nav-bar nav a:hover {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 /* =========================
@@ -153,12 +154,18 @@ a:focus-visible {
 
 .music-section {
     padding: 35px 0 50px;
-    background: #1d2021;
+    background: var(--accent);
 }
 
 .music-heading {
     padding: 0 20px;
     margin-bottom: 22px;
+}
+
+.music-heading h3 {
+     margin-top: 8px;
+    color: var(--text);
+    font-size: 1.2rem;
 }
 
 .music-heading h2 {
@@ -181,7 +188,7 @@ a:focus-visible {
 }
 
 .music-section h2 {
-    color: #d6b879;
+    color: var(--gold);
     margin-bottom: 20px;
     text-align: center;
 }
@@ -201,11 +208,11 @@ a:focus-visible {
 .album-card {
     min-width: 0;
     width: 100%;
-    background-color: #242424;
+    background-color: var(--card);
     border-radius: 8px;
     overflow: hidden;
     text-decoration: none;
-    color: #ffffff;
+    color: var(--gold);
     transition: transform 0.2s ease;
 }
 
@@ -228,13 +235,13 @@ a:focus-visible {
 }
 
 .album-info h3 {
-    color: #d6b879;
+    color: var(--text);
     font-size: 14px;
     margin: 0 0 6px;
 }
 
 .album-info p {
-    color: #cccccc;
+    color: var(--muted);
     font-size: 12px;
     margin: 0;
 }
@@ -246,7 +253,7 @@ a:focus-visible {
 
 footer {
     padding: 32px 20px;
-    background: #111313;
+    background: #0A020D;
     border-top: 1px solid var(--border);
     text-align: center;
 }

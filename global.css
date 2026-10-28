@@ -10,13 +10,14 @@
 }
 
 :root {
-    --background: #17191a;
-    --card: #232627;
-    --accent: #e65c3d;
-    --gold: #d6b879;
+    --background: #13051A;
+    --card: #260934;
+    --accent: #601782;
+    --gold: #B352E0;
     --text: #f3f0e9;
     --muted: #aaa9a4;
-    --border: #393c3d;
+    --border: #300C41;
+    --section: rgba(10, 2, 13, 0.5);
 }
 
 html {
@@ -89,7 +90,7 @@ input:focus-visible {
     align-items: center;
     gap: 12px;
     padding: 16px 4%;
-    background-color: rgba(23, 25, 26, 0.96);
+    background-color: #0A020D;
     border-bottom: 1px solid var(--border);
 }
 
@@ -108,13 +109,13 @@ input:focus-visible {
 }
 
 #nav-bar nav a {
-    color: var(--muted);
+    color: var(--text);
     font-size: 0.9rem;
     transition: color 0.2s ease;
 }
 
 #nav-bar nav a:hover {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 /* =========================
@@ -132,7 +133,7 @@ input:focus-visible {
     background:
         radial-gradient(
             ellipse at top,
-            rgba(230, 92, 61, 0.17),
+            #300C41,
             transparent 65%
         );
 }
@@ -140,7 +141,7 @@ input:focus-visible {
 .eyebrow {
     margin-bottom: 10px;
     color: var(--gold);
-    font-size: 0.75rem;
+    font-size: 0.9 vrem;
     font-weight: 700;
     letter-spacing: 3px;
     text-transform: uppercase;
@@ -196,7 +197,7 @@ input:focus-visible {
 }
 
 .search-icon:hover {
-    background-color: #c9492e;
+    background-color: var(--gold);
 }
 
 .search-note {
@@ -302,7 +303,8 @@ input:focus-visible {
 ========================= */
 
 #music-section {
-    background-color: #1d2021;
+    background-color: rgba(10, 2, 13, 0.5);
+    
 }
 
 .album-cards {
@@ -320,13 +322,14 @@ input:focus-visible {
     background-color: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
-    transition:
-        transform 0.25s ease,
-        border-color 0.25s ease;
+    transition: translateY 0.5s ease;
+    transition: scale 0.5s ease;
+    transition: border-color 0.5s ease;
 }
 
 .album-card:hover {
     transform: translateY(-4px);
+    scale: calc(1.02);
     border-color: var(--accent);
 }
 
@@ -411,7 +414,7 @@ input:focus-visible {
 
 footer {
     padding: 35px 20px;
-    background-color: #111313;
+    background-color: #0A020D;
     border-top: 1px solid var(--border);
     text-align: center;
 }

@@ -10,13 +10,13 @@
 }
 
 :root {
-    --background: #17191a;
-    --card: #232627;
-    --accent: #e65c3d;
-    --gold: #d6b879;
+    --background: #13051A;
+    --card: #260934;
+    --accent: #601782;
+    --gold: #B352E0;
     --text: #f3f0e9;
     --muted: #aaa9a4;
-    --border: #393c3d;
+    --border: #300C41;
 }
 
 html {
@@ -53,7 +53,7 @@ img {
     align-items: center;
     gap: 12px;
     padding: 16px 4%;
-    background: rgba(23, 25, 26, 0.97);
+    background: #0A020D;
     border-bottom: 1px solid var(--border);
 }
 
@@ -72,12 +72,12 @@ img {
 }
 
 #nav-bar nav a {
-    color: var(--muted);
+    color: var(--text);
     font-size: 0.9rem;
 }
 
 #nav-bar nav a:hover {
-    color: var(--accent);
+    color: var(--gold);
 }
 
 /* Main page layout */
@@ -293,7 +293,7 @@ img {
 
 footer {
     padding: 35px 20px;
-    background: #111313;
+    background-color: #0A020D;
     border-top: 1px solid var(--border);
     text-align: center;
 }
