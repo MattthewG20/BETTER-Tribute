@@ -9,14 +9,24 @@
     padding: 0;
 }
 
+:root {
+    --background: #17191a;
+    --card: #232627;
+    --accent: #e65c3d;
+    --gold: #d6b879;
+    --text: #f3f0e9;
+    --muted: #aaa9a4;
+    --border: #393c3d;
+}
+
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 90px;
 }
 
 body {
-    background-color: #17191a;
-    color: #f3f0e9;
+    background-color: var(--background);
+    color: var(--text);
     font-family: Arial, Helvetica, sans-serif;
     line-height: 1.6;
 }
@@ -41,16 +51,6 @@ button,
 a,
 input {
     -webkit-tap-highlight-color: transparent;
-}
-
-:root {
-    --background: #17191a;
-    --card: #232627;
-    --accent: #e65c3d;
-    --gold: #d6b879;
-    --text: #f3f0e9;
-    --muted: #aaa9a4;
-    --border: #393c3d;
 }
 
 /* =========================
@@ -88,7 +88,7 @@ input:focus-visible {
     flex-direction: column;
     align-items: center;
     gap: 12px;
-    padding: 16px;
+    padding: 16px 4%;
     background-color: rgba(23, 25, 26, 0.96);
     border-bottom: 1px solid var(--border);
 }
@@ -127,7 +127,7 @@ input:focus-visible {
     align-items: center;
     justify-content: center;
     min-height: 65vh;
-    padding: 70px 22px;
+    padding: 70px 5%;
     text-align: center;
     background:
         radial-gradient(
@@ -148,23 +148,23 @@ input:focus-visible {
 
 #search-section h1 {
     color: var(--text);
-    font-size: clamp(2.7rem, 13vw, 5rem);
+    font-size: clamp(2.7rem, 7vw, 6rem);
     font-weight: 900;
     letter-spacing: 3px;
     line-height: 1.1;
 }
 
 .hero-description {
-    max-width: 480px;
+    max-width: 650px;
     margin: 22px 0;
     color: var(--muted);
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 .searchbar {
     display: flex;
     width: 100%;
-    max-width: 430px;
+    max-width: 550px;
     overflow: hidden;
     border: 1px solid var(--border);
     border-radius: 8px;
@@ -210,18 +210,20 @@ input:focus-visible {
 ========================= */
 
 .page-section {
-    padding: 55px 18px;
-    scroll-margin-top: 80px;
+    width: 100%;
+    padding: 55px 4%;
+    margin: 0 auto;
+    scroll-margin-top: 90px;
 }
 
 .section-heading {
-    margin: 0 auto 28px;
+    margin: 0 auto 32px;
     text-align: center;
 }
 
 .section-heading h2 {
     margin-bottom: 8px;
-    font-size: clamp(1.8rem, 7vw, 2.5rem);
+    font-size: clamp(1.8rem, 4vw, 3rem);
     line-height: 1.2;
 }
 
@@ -238,11 +240,13 @@ input:focus-visible {
     display: grid;
     grid-template-columns: 1fr;
     gap: 20px;
-    max-width: 1050px;
+    width: 100%;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
 .artist-photos {
+    min-width: 0;
     overflow: hidden;
     background-color: var(--card);
     border: 1px solid var(--border);
@@ -304,8 +308,9 @@ input:focus-visible {
 .album-cards {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 14px;
-    max-width: 1100px;
+    gap: 16px;
+    width: 100%;
+    max-width: 1600px;
     margin: 0 auto;
 }
 
@@ -351,7 +356,7 @@ input:focus-visible {
 }
 
 .section-footer {
-    margin-top: 22px;
+    margin-top: 28px;
     color: var(--muted);
     font-size: 0.8rem;
     text-align: center;
@@ -365,7 +370,8 @@ input:focus-visible {
     display: grid;
     grid-template-columns: 1fr;
     gap: 16px;
-    max-width: 900px;
+    width: 100%;
+    max-width: 1500px;
     margin: 0 auto;
 }
 
@@ -429,7 +435,7 @@ footer .copyright {
     #nav-bar {
         flex-direction: row;
         justify-content: space-between;
-        padding: 18px 28px;
+        padding: 18px 4%;
     }
 
     #nav-bar nav {
@@ -437,51 +443,186 @@ footer .copyright {
     }
 
     .page-section {
-        padding: 70px 28px;
+        padding: 70px 4%;
+    }
+
+    #search-section {
+        padding: 80px 4%;
     }
 
     .artist-names {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 22px;
+        gap: 24px;
     }
 
     .album-cards {
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 20px;
+        gap: 22px;
+    }
+
+    .album-details {
+        padding: 14px;
     }
 
     .profile-grid {
         grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 20px;
     }
 }
 
 /* =========================
-   DESKTOP
+   DESKTOP: 900px AND UP
 ========================= */
 
 @media (min-width: 900px) {
     #nav-bar {
-        padding: 20px 6%;
+        padding: 22px 3%;
+    }
+
+    .logo {
+        font-size: 1.35rem;
+    }
+
+    #nav-bar nav {
+        gap: 30px;
+    }
+
+    #nav-bar nav a {
+        font-size: 1rem;
     }
 
     #search-section {
         min-height: 75vh;
+        padding: 100px 3%;
+    }
+
+    .hero-description {
+        max-width: 750px;
+        font-size: 1.15rem;
+    }
+
+    .searchbar {
+        max-width: 650px;
     }
 
     .page-section {
-        padding: 85px 6%;
+        padding: 90px 3%;
+    }
+
+    .section-heading {
+        margin-bottom: 42px;
+    }
+
+    .section-heading > p:last-child {
+        font-size: 1.05rem;
     }
 
     .artist-names {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 30px;
+        max-width: 1700px;
+    }
+
+    .artist-info {
+        padding: 24px;
+    }
+
+    .artist-info h3 {
+        font-size: 1.6rem;
+    }
+
+    .artist-info p {
+        font-size: 1.05rem;
     }
 
     .album-cards {
         grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 28px;
+        max-width: 1700px;
+    }
+
+    .album-card {
+        border-radius: 12px;
+    }
+
+    .album-details {
+        padding: 18px;
+    }
+
+    .album-name {
+        font-size: 1.1rem;
+    }
+
+    .artist-card-name {
+        font-size: 0.95rem;
     }
 
     .profile-grid {
         grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 24px;
+        max-width: 1700px;
+    }
+
+    .profile-bar {
+        gap: 20px;
+        padding: 22px;
+    }
+
+    .profile-bar img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .profile-bar h3 {
+        font-size: 1.15rem;
+    }
+
+    .profile-bar p {
+        font-size: 0.95rem;
+    }
+}
+
+/* =========================
+   EXTRA-LARGE SCREENS
+========================= */
+
+@media (min-width: 1400px) {
+    #nav-bar {
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+
+    .page-section {
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+
+    #search-section {
+        padding-right: 2.5%;
+        padding-left: 2.5%;
+    }
+
+    .artist-names {
+        gap: 36px;
+        max-width: 1800px;
+    }
+
+    .album-cards {
+        gap: 32px;
+        max-width: 1800px;
+    }
+
+    .album-details {
+        padding: 20px;
+    }
+
+    .album-name {
+        font-size: 1.15rem;
+    }
+
+    .profile-grid {
+        gap: 28px;
+        max-width: 1800px;
     }
 }
 
