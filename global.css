@@ -383,7 +383,7 @@ input:focus-visible {
     align-items: center;
     gap: 16px;
     padding: 16px;
-    background-color: var(--card);
+    background-color: var(--accent);
     border: 1px solid var(--border);
     border-radius: 10px;
 }
