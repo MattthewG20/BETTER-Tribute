@@ -83,17 +83,20 @@ img {
     gap: 20px;
 }
 
-#nav-bar nav a {
-    color: var(--text);
-    font-size: 0.9rem;
+.nav-link {
     display: inline-block;
-    transition: color 0.25s ease,
-                transform 0.25s ease;
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 5px;
+
+    transition: all 0.5s ease;
 }
 
-#nav-bar nav a:hover {
+.nav-link:hover {
     color: var(--gold);
-    transform: translateY(-2px);
+    transform: translateY(-4px);
+    transform: scale(1.1);
+    transition: all 0.5s ease;
 }
 
 /* Main page layout */
@@ -318,28 +321,36 @@ img {
 }
 
 .suggestion-card {
+    display: block; 
+    position: relative;
+    top: 0;
+    margin-top: 0;
+
     min-width: 0;
     overflow: hidden;
     border: 1px solid var(--border);
     border-radius: 10px;
     background: var(--card);
-    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+    
+    transition: margin-top 0.25s ease, top 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .suggestion-card:hover {
-    transform: translateY(-4px);
+    margin-top: -4px;
+    top: -4px;
+    
     border-color: var(--gold);
     box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
 }
 
+
 .suggestion-card img {
     aspect-ratio: 1 / 1;
     object-fit: cover;
-    transition: transform 0.3s ease,
-                filter 0.3s ease;
 }
 
-.suggestion-card:hover img {
+.suggestion-card:hover img,
+.suggestion-card:hover {
     transform: scale(1.04);
     filter: brightness(1.08);
 }
@@ -494,7 +505,7 @@ footer a:hover {
     *,
     *::before,
     *::after {
-        transition-duration: 0.01ms !important;
+        transition:none ;
     }
 
     .album-cover:hover img,
