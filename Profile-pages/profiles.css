@@ -108,6 +108,13 @@ a:focus-visible {
     background: var(--card);
     border: 1px solid var(--border);
     border-radius: 10px;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+.profile-image:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
 }
 
 .profile-information {
@@ -589,15 +596,13 @@ a:focus-visible {
     overflow: hidden;
     text-decoration: none;
     color: var(--gold);
-    transition: transform 0.25s ease,
-                box-shadow 0.25s ease,
-                background-color 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .album-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
-    background-color: var(--accent);
+    transform: translateY(-5px) scale(1.02);
+    border-color: var(--accent);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }
 
 .album-card:focus-visible {
@@ -615,9 +620,14 @@ a:focus-visible {
                 filter 0.3s ease;
 }
 
+.album-photo,
+.album-card img {
+    transition: transform 0.35s ease;
+}
+
+.album-card:hover .album-photo,
 .album-card:hover img {
     transform: scale(1.04);
-    filter: brightness(1.08);
 }
 
 /* Album title and details */

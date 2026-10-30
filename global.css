@@ -303,7 +303,7 @@ input:focus-visible {
 }
 
 .text-link:hover {
-     color: var(--gold);
+    color: var(--gold);
     transform: translateX(4px);
 }
 
@@ -336,7 +336,7 @@ input:focus-visible {
 }
 
 .album-card:hover {
-     transform: translateY(-5px) scale(1.02);
+    transform: translateY(-5px) scale(1.02);
     border-color: var(--accent);
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
 }

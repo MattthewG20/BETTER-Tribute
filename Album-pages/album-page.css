@@ -323,9 +323,7 @@ img {
     border: 1px solid var(--border);
     border-radius: 10px;
     background: var(--card);
-    transition: transform 0.25s ease,
-                border-color 0.25s ease,
-                box-shadow 0.25s ease;
+    transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
 }
 
 .suggestion-card:hover {
