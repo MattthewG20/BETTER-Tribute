@@ -289,7 +289,7 @@ input:focus-visible {
 
 .text-link {
     display: inline-block;
-    color: var(--accent);
+    color: var(--text);
     font-size: 0.9rem;
     font-weight: 700;
 }
