@@ -353,6 +353,485 @@ footer .copyright {
         padding-bottom: 65px;
     }
 }
+/* =========================
+   GENERAL STYLES
+========================= */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --background: #13051A;
+    --card: #260934;
+    --accent: #601782;
+    --gold: #B352E0;
+    --text: #f3f0e9;
+    --muted: #aaa9a4;
+    --border: #300C41;
+    --accent: rgba(10, 2, 13, 0.5);
+}
+
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 85px;
+}
+
+body {
+    background: var(--background);
+    color: var(--text);
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+    transition: color 0.25s ease,
+                transform 0.25s ease,
+                box-shadow 0.25s ease;
+}
+
+a:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* =========================
+   NAVIGATION
+========================= */
+
+#nav-bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+    padding: 16px;
+    background: #0A020D;
+    border-bottom: 1px solid var(--border);
+}
+
+.logo {
+    color: #601782;
+    font-size: 1.15rem;
+    font-weight: 900;
+    letter-spacing: 3px;
+}
+
+#nav-bar nav {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+}
+
+#nav-bar nav a {
+    color: var(--text);
+    font-size: 0.9rem;
+    transition: color 0.25s ease,
+                transform 0.25s ease;
+}
+
+#nav-bar nav a:hover {
+    color: var(--gold);
+    transform: translateY(-2px);
+}
+
+/* =========================
+   PROFILE INTRO
+========================= */
+
+.profile-intro {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding: 32px 20px 45px;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+.profile-image {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease,
+                border-color 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: scale(1.02);
+    border-color: var(--gold);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+}
+
+.profile-information {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.eyebrow {
+    margin-bottom: 8px;
+    color: var(--gold);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+
+.profile-information h1 {
+    margin-bottom: 12px;
+    font-size: clamp(2.3rem, 9vw, 4rem);
+    line-height: 1.1;
+    overflow-wrap: anywhere;
+}
+
+.profile-description {
+    max-width: 540px;
+    color: var(--muted);
+    font-size: 1rem;
+}
+
+.profile-tag {
+    align-self: flex-start;
+    margin-top: 20px;
+    padding: 6px 12px;
+    color: var(--gold);
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    font-size: 0.8rem;
+    transition: color 0.25s ease,
+                border-color 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.profile-tag:hover {
+    color: var(--text);
+    border-color: var(--gold);
+    background-color: var(--card);
+}
+
+/* =========================
+   MUSIC SECTION
+========================= */
+
+.music-section {
+    padding: 35px 0 50px;
+    background: var(--accent);
+}
+
+.music-heading {
+    padding: 0 20px;
+    margin-bottom: 22px;
+}
+
+.music-heading h3 {
+    margin-top: 8px;
+    color: var(--text);
+    font-size: 1.2rem;
+}
+
+.music-heading h2 {
+    font-size: 1.9rem;
+    line-height: 1.2;
+}
+
+.music-heading p {
+    margin-top: 8px;
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+/* Album Covers Section */
+.music-section {
+    padding: 24px 16px;
+    width: 100%;
+    box-sizing: border-box;
+}
+
+.music-section h2 {
+    color: var(--gold);
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* Two-column album grid */
+.album-scroll {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 16px;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    overflow: visible;
+}
+
+/* Individual album cards */
+.album-card {
+    min-width: 0;
+    width: 100%;
+    background-color: var(--card);
+    border-radius: 8px;
+    overflow: hidden;
+    text-decoration: none;
+    color: var(--gold);
+    transition: transform 0.25s ease,
+                box-shadow 0.25s ease,
+                background-color 0.25s ease;
+}
+
+.album-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.3);
+    background-color: var(--accent);
+}
+
+.album-card:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 4px;
+}
+
+/* Album cover images */
+.album-card img {
+    display: block;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    transition: transform 0.3s ease,
+                filter 0.3s ease;
+}
+
+.album-card:hover img {
+    transform: scale(1.04);
+    filter: brightness(1.08);
+}
+
+/* Album title and details */
+.album-info {
+    padding: 10px;
+    text-align: center;
+}
+
+.album-info h3 {
+    color: var(--text);
+    font-size: 14px;
+    margin: 0 0 6px;
+    transition: color 0.25s ease;
+}
+
+.album-card:hover .album-info h3 {
+    color: var(--gold);
+}
+
+.album-info p {
+    color: var(--muted);
+    font-size: 12px;
+    margin: 0;
+}
+
+/* =========================
+   FOOTER
+========================= */
+
+footer {
+    padding: 32px 20px;
+    background: #0A020D;
+    border-top: 1px solid var(--border);
+    text-align: center;
+}
+
+footer p {
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.85rem;
+}
+
+footer .copyright {
+    margin-top: 18px;
+    font-size: 0.75rem;
+}
+
+/* Footer links */
+footer a:hover {
+    color: var(--gold);
+}
+
+/* =========================
+   TABLET
+========================= */
+
+@media (min-width: 620px) {
+    #nav-bar {
+        flex-direction: row;
+        justify-content: space-between;
+        padding: 18px 28px;
+    }
+
+    #nav-bar nav {
+        gap: 24px;
+    }
+
+    .profile-intro {
+        flex-direction: row;
+        align-items: center;
+        gap: 32px;
+        padding: 55px 28px;
+    }
+
+    .profile-image {
+        width: 44%;
+        flex-shrink: 0;
+        aspect-ratio: 3 / 4;
+    }
+
+    .profile-information {
+        flex: 1;
+    }
+
+    .music-heading {
+        padding: 0 28px;
+    }
+
+    .album-scroll {
+        gap: 20px;
+        padding-right: 28px;
+        padding-left: 28px;
+    }
+
+    .album-card {
+        flex-basis: 190px;
+    }
+}
+
+/* =========================
+   DESKTOP
+========================= */
+
+@media (min-width: 900px) {
+    #nav-bar {
+        padding: 20px 6%;
+    }
+
+    .profile-intro {
+        gap: 55px;
+        padding: 75px 6%;
+    }
+
+    .profile-image {
+        width: 40%;
+        max-height: 460px;
+    }
+
+    .music-heading {
+        padding: 0 6%;
+    }
+
+    .album-scroll {
+        padding-right: 6%;
+        padding-left: 6%;
+    }
+
+    .album-card {
+        flex-basis: 220px;
+    }
+
+    .music-section {
+        padding-top: 50px;
+        padding-bottom: 65px;
+    }
+}
+
+/* Tablets: 4 albums per row */
+@media (min-width: 700px) {
+    .music-section {
+        padding: 36px 28px;
+    }
+
+    .album-scroll {
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        gap: 24px;
+        max-width: 1200px;
+    }
+
+    .album-info {
+        padding: 14px;
+    }
+
+    .album-info h3 {
+        font-size: 16px;
+    }
+
+    .album-info p {
+        font-size: 14px;
+    }
+}
+
+/* PCs and larger screens: bigger grid and album covers */
+@media (min-width: 900px) {
+    .music-section {
+        padding: 48px 40px;
+    }
+
+    .album-scroll {
+        max-width: 1500px;
+        gap: 30px;
+    }
+
+    .album-card {
+        border-radius: 12px;
+    }
+
+    .album-info {
+        padding: 18px 14px;
+    }
+
+    .album-info h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+    }
+
+    .album-info p {
+        font-size: 15px;
+    }
+}
+
+/* =========================
+   REDUCED MOTION
+========================= */
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        transition: none !important;
+    }
+
+    .profile-image:hover,
+    .album-card:hover,
+    .album-card:hover img,
+    #nav-bar nav a:hover {
+        transform: none;
+    }
+}
+
 
 /* Tablets: 4 albums per row */
 @media (min-width: 700px) {
